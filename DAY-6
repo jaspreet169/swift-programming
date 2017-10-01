@@ -1,0 +1,46 @@
+//----constructure---//
+class  employee
+{
+   var eid:Int?
+   var name: String?
+   var sal:Double?
+   //---default constructure---//
+   init()
+   {
+       eid = 0
+       name = String()
+       sal = 0.0
+   }
+  //---constructure with parameter--//
+   init( eid:Int,  name:String,  sal:Double)
+   {
+       self.eid = eid
+       self.name = name
+       self.sal = sal
+   }
+   
+  //----destructure---//
+   deinit {
+       print ("employee object destroyed")
+   }
+}
+var e1 = employee()
+//employee.display(e1)
+//print(e1.eid!, e1.name!, e1.sal!)
+e1.display()
+
+/*
+var eid = Int() // 0
+var enm = String()
+var gender = Bool() //fals
+var sal = Double() // 0.0
+print(eid,enm,gender,sal)
+*/
+
+var e2 = employee(eid:1, name:"jaspreet kaur", sal:5000)
+e2.display()
+
+e1 =  e2
+e2 = e1
+var e3 = e2
+e3.display()
