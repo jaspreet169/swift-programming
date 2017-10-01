@@ -1,0 +1,128 @@
+class Employee
+{
+   var eid:Int?
+   var ename:String?
+   var salary:Double?
+   // Default Constructor
+   init()
+   {
+       self.eid = 0
+       self.ename = String()
+       self.salary = 0.0
+   }
+   /*-----copy constructure ----//
+   init(emp:Employee)
+   {
+       self.eid = emp.eid
+       self.ename = emp.ename
+       self.salary = emp.salary
+   }
+   */
+   //Parametrize Constructor
+   init(employeeId eid:Int, employeeName ename:String, employeeSalary salary:Double)
+   {
+       self.eid = eid
+       self.ename = ename
+       self.salary = salary
+   }
+   
+   
+   func display()
+   {
+       print(self.eid!, self.ename!, self.salary!)
+   }
+   
+   //Destructor
+   deinit {
+       print("Employee Object Destroyed")
+       
+}
+}
+//----inheritence----//
+class FullTimeEmployee:Employee
+{
+   var noOfpaidleaves : Int?
+   override init()
+   {
+       print("(c) full time  employee")
+       super.init()
+   }
+   //---Parametrize Constructor--//
+   init(employeeId eid:Int, employeeName ename:String, employeeSalary salary:Double, noOfpaidleaves:Int)
+   {
+       super.init(employeeId:eid, employeeName:ename, employeeSalary:salary)
+       self.noOfpaidleaves = noOfpaidleaves
+       
+   }
+   
+   func display(welcome:String)
+   {
+       print("\(welcome), welcome to fulltime")
+   }
+   override func display()
+   {
+       super.display()
+       print("noOfPayedleaves : \(self.noOfpaidleaves!)")
+   }
+   
+   }
+
+   var f1 = FullTimeEmployee(employeeId:1, employeeName:"jaspreet",employeeSalary :6000.00, noOfpaidleaves:10)
+   f1.display();
+var f2 = FullTimeEmployee(employeeId:2, employeeName:"payal",employeeSalary :5000.00, noOfpaidleaves:10)
+f2.display();
+//------NEW CLASS------//
+class Employee
+{
+   let MIN_PAY = 11.60
+   var a : String?
+   
+   static var noOfObject = 0
+   init() {
+       Employee.noOfObject += 1
+   }
+   static func getNoOfObject() -> Int
+   {
+       //a = "Test" //Not allowed
+       return noOfObject
+   }
+   
+   func greet(name: String)
+   {
+       print("Employee :: Who is Taylor Swift? \(name)")
+   }
+   deinit {
+        print("Employee Deinit")
+   }
+}
+
+var e1 = Employee()
+print(Employee.getNoOfObject())
+e1.greet(name: "e1")
+var e2 = Employee()
+print(Employee.getNoOfObject())
+
+class PartTime : Employee
+{
+   override func greet(name: String)
+   {
+       print("Part Time :: Who is Taylor Swift? \(name)")
+   }
+   
+   deinit {
+       print("Part Time Deinit")
+   }
+}
+
+var p1 = PartTime()
+p1.greet(name: "p1")
+
+e1 = p1
+e1.greet(name: "NAME")
+
+var r1 : Employee
+r1 = Employee()
+r1.greet(name: "Employee")
+
+r1 = PartTime()
+r1.greet(name: "Parttime")
