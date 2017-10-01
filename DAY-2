@@ -1,0 +1,123 @@
+let :dog::cow: = "dogcow"
+                                   LINES STARTED WITH // ARE COMMENTED
+//var x: string?// = "jaspreet" + " kaur"
+//x ! = nil ? x! :"hello"
+//var b = x ?? "hello"
+
+for i in 1...10
+{
+   var s = 0
+   for _ in 1...i
+   {
+       s = s + 5
+   }
+   print("5 x \(i) = \(s)")
+}
+
+let range = -1...5
+range.contains(7)
+range.contains(0)
+range.contains(-2)
+range.lowerBound
+range.upperBound
+
+
+//for k in range
+//{
+ //  print(k)
+//}
+//var n = 20
+//while n != 3
+//{
+ //  print(n)
+   //n = n-1;
+//}
+var n = 10
+repeat{
+   print(n)
+   n=n-1;
+}
+   while n != 0
+//switch
+let someCharacter: Character = "b"
+switch someCharacter {
+case "a":
+   //fallthrough
+   print("The letter A ")
+case "b":
+   //fallthrough
+   print("The  letter B")
+case "d":
+   //fallthrough
+   print("the letter d")
+default:
+   print("not in list ")
+}
+
+let names = ["jaspreet", "guneet", "simran", "jazzy"]
+for name in names {
+   print("Hello, \(name)!")
+}
+
+let approximateCount = 62
+let countedThings = "moons orbiting Saturn"
+let naturalCount: String
+switch approximateCount {
+case 0:
+   naturalCount = "no"
+case 1..<5:
+   naturalCount = "a few"
+case 5..<12:
+   naturalCount = "several"
+case 12..<100:
+   naturalCount = "dozens of"
+case 100..<1000:
+   naturalCount = "hundreds of"
+default:
+   naturalCount = "many"
+}
+print("There are \(naturalCount) \(countedThings).")
+
+let somePoint = (-6, 1)
+switch somePoint {
+case (0, 0):
+   print("\(somePoint) is at the origin")
+case (_, 0):
+   print("\(somePoint) is on the x-axis")
+case (0, _):
+   print("\(somePoint) is on the y-axis")
+case (-2...5, -5...5):
+   print("\(somePoint) is inside the box")
+default:
+   print("\(somePoint) is outside of the box")
+}
+// stringhandling
+//var str = """
+//hello,
+//playground
+//"""
+
+//let dollarSign = "\u{24}"
+//let d = "$"
+//let sparklingHeart = "\u{1F496}"
+
+//var a = ""
+//var b = string()
+//if b.isEmpty{
+ //  print("nothing to see here")
+//}
+
+var t = "hello"
+var y = "world"
+t.append("y")
+print(t)
+
+var newC: Character = "c"
+var myName: String = "welcome to lambton college"
+str = str.uppercased()
+for c in str
+{
+   print (c)
+}
+print ("lenght : ", str.count)
+print("First character : " ,str[str.startIndex])
