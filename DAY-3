@@ -1,0 +1,142 @@
+import UIKit
+
+var str = "Hello, playground"
+var a = 5 , b = 2
+//a+=1
+//var c = 5 + b / a-=1 + a+=1
+//print(a)
+//declaring tuples //
+var x = (10,30,40)
+print(x.0)
+print(x.1)
+print(x.2)
+var y = (100,x.2)
+print(y.0)
+
+var (a1,a2) = y
+print(a1)
+print(a2)
+
+var(b1,b2) = (x.0,x.1)
+print(b1,b2)
+
+//var (b1, _, b2) = x
+//print(b1)
+//print(b2)
+
+//--ARRAY--//
+var p = [10,20,30,40,50]
+print(p[4])
+//use methods to add values
+var r = [Int]();
+r.append(100)
+print(r[0])
+
+//b[0]=1000
+//print(b[0])
+//print("size:\(b.count)")
+
+//var c = [ANY]();             declare to store any data types values
+//print("size:\(c.count)")
+//c.append(100)
+//c.append("jaspreet")
+//print(c[0])
+//print(c[2])
+
+var s = p[2...4]
+for t in s
+{
+print(t)
+}
+
+// creating array with a default value
+var z = Array(repeating:2.2, count :3)
+for t in z
+{
+   print(t)
+}
+
+//Creating an Array with an Array Literal
+var list: [String] = ["Eggs", "Milk"]
+for (index, value) in list.enumerated()
+{
+   print("Item \(index): \(value)")
+}
+
+//combine two array
+// var xx = a + b
+//print(xx[0])
+
+//adding new item into array
+list.append("flour")
+print(list)
+
+//add multiple record in array
+list += ["Chocolate Spread", "Cheese", "Butter"]
+for p in list
+{
+   print(p)
+}
+
+//removing item from array
+let Butter = list.removeLast()
+for t in list
+{
+   print(t)
+}
+
+//declaring set in swift
+var Genres: Set<String> = ["Rock", "Classical", "Hip hop"]
+print(Genres)
+// dictonaries
+var d1 :Dictionary<String, String> =
+   ["india":"hindi","canada":"english"]
+print(d1)
+print(d1.description)
+print(d1["india"]!)
+print(d1["canada"]!)
+
+//insert new record
+
+d1["china"] = "mandarin"
+for (k,v) in d1
+{
+print("\(k) -> \(v)")
+}
+
+//update exiting record
+d1["china"] = "french"
+for (k,v) in d1
+{
+   print("\(k) -> \(v)")
+}
+
+var d2 = ["india":"hindi","canada":"english"]
+for (k,v) in d2
+{
+   print("\(k) -> \(v)")
+}
+
+var d3 = [String:AnyObject]()
+d3["firstname"] = "jaspreet" as AnyObject
+d3["lastname"] = "kaur" as AnyObject
+d3["age"] = Int(23) as AnyObject
+d3["salary"] = nil
+d3["birthdate"] = NSDate() as AnyObject
+   print(d3)
+
+for (k,v) in d3                             //indiviual value
+{
+   print("\(k) -> \(v)")
+   
+}
+//single object
+for obj in d3{
+   print("\(obj.key) ->\(obj.value)")
+}
+//only keys from dictoniary
+var keyList = Array(d3.keys)
+for v in keyList
+{
+   print ("KEY ->\(v)")
+}
