@@ -1,0 +1,203 @@
+//--class reference type-- taking s letter for class//
+class s{
+var x = 100
+}
+var s1 = s()
+print ("s1 (x) \(s1.x)")
+var s2 = s1
+print("s2 (x) \(s2.x)")
+s1.x = 200 ;
+print ("s1 (x) \(s1.x)")
+print ("s2 (x) \(s2.x)")
+
+//--structure is value type-- taking c letter for stucture//
+struct c{
+    var x = 100
+   }
+   var c1 = c()
+   print ("c1 (x) \(c1.x)")
+   var c2 = c1
+   print("c2 (x) \(c2.x)")
+   c1.x = 200 ;
+   print ("c1 (x) \(c1.x)")
+   print ("c2 (x) \(c2.x)")
+
+class f{
+   var c0 = c ()
+   var y = 500
+}
+var f1 = f()
+print ("f1 (y)\(f1.y)")
+print("f1 (c0)\(f1.c0.x)")
+print("--------")
+
+var f2 = f()
+f2.y = 2000
+f2.c0.x = 200
+//print("c2 (x) \(c2.x)")
+//c1.x = 200;
+print ("f2(y) \(f2.y)")
+print ("\(f2.c0.x)")
+
+f2.c0.x = f1.c0.x
+print("*******")
+print("f1 (c0) \(f1.c0.x)")
+print ("f2 (c0)  \(f2.c0.x)")
+
+
+
+
+
+
+f2.c0.x = 300
+print("*******")
+print("f1 (c0) \(f1.c0.x)")
+print ("f2 (c0)  \(f2.c0.x)")
+
+
+f2.c0 =  f1.c0
+print("*******")
+print("f1 (c0) \(f1.c0.x)")
+print ("f2 (c0)  \(f2.c0.x)")
+
+
+
+
+
+
+//----class ----//
+class StudentClass
+{
+   //let x = 100
+   var Id : Int = 0
+   var Name : String? = nil
+   var Total : Int = 0
+   var per : Double = 0.0
+   var result :String?
+   var getResult: String?
+   {
+       set
+       {
+           if per >= 80.0
+           {
+               result = "First"
+           }
+           else if per >= 70.0
+           {
+               result = "Second"
+           }
+           else if per >= 60.0
+           {
+               result = "Third"
+           }
+           else if per >= 50.0
+           {
+               result = "Pass"
+           }
+           else
+           {
+               result = "Fail"
+           }
+       }//set
+       get
+       {
+           if let x = result
+           {
+               return x
+           }
+           return "Unknown "
+       }//get
+   }// Result
+   
+   
+   
+   func setData(Id : Int , sname : String ,Total : Int , Percentage : Double)
+   {
+       self.Id = Id
+       self.Name = sname
+       self.Total = Total
+       per = Percentage
+   }//setData
+   
+   func displayData()
+   {
+       print(" Student Id : \(Id)" )
+       print(" Student Name : \(Name!)" )
+       print(" Student Total : \(Total)" )
+       print(" Student Per : \(per)" )
+       print(" Student Final Result : \(getResult!)" )
+   }//displayData
+   
+} // StudentClass
+
+var stu1 = StudentClass()
+
+stu1.setData(Id: 1, sname: "Student name", Total: 390, Percentage: 45)
+stu1.getResult = "Its pass"
+stu1.displayData()
+
+class Student{
+  //let x = 100
+  var sid:Int = 0
+  var snm:String?
+  var result:String? = "Unknown"
+ 
+  //Properties
+  var total:Double = 0.0
+  {
+      willSet(newTotal) {
+       
+      }
+      didSet {
+          self.per = self.total / 5.0
+      }
+ 
+  }
+  var per:Double = 0.0
+  {
+      willSet(newPercentage) {
+          print("***Result About to set based on new \(newPercentage)% calculation")
+      }
+      didSet {
+          if self.per >= 80.0{
+              self.result = "First"
+          } else if self.per >= 70.0{
+              self.result = "Second"
+          } else if self.per >= 60.0{
+              self.result = "Third"
+          } else if self.per >= 50.0{
+              self.result = "Pass"
+          } else {
+              self.result = "Fail"
+          }
+      }
+  }
+ 
+  func setData(studentId sid:Int, snm:String, marks:Double){
+      self.sid = sid
+      self.snm = snm
+      self.total = marks
+  }
+ 
+  func displayData(){
+      print("---------------------------")
+      print("Student ID : \(sid)")
+      print("Student Name : \(snm!)")
+      print("Student Total Marks : \(total)")
+      print("Student Percentage : \(per)")
+      print("Student Final Result : \(self.result!)")
+      print("---------------------------")
+  }
+}
+
+var s1 = Student()
+s1.setData(studentId: 1, snm: "Pritesh", marks: 200)
+s1.displayData()
+s1.total = 500
+s1.displayData()
+
+
+s1.total = 350
+s1.displayData()
+
+
