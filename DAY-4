@@ -1,0 +1,137 @@
+//----function----//                    
+                                   
+func add()
+{
+   print("i am in user defied fundtion")
+}
+add()
+
+// function with one parameter
+func welcome(name:String)
+{
+   print("hello,\(name)")
+}
+add()
+welcome (name: "jaspreet")           // calling function
+
+// --with two parameter//
+func sum(a:Int,b:Int)
+{
+   //var c = a + b
+   //print("sum :\(c)")
+}
+sum (a:10,b:20)
+var a = 100 ,b = 200
+sum (a:a,b:b)
+
+// --subraction//
+func sub(a:Int, _ b:Int)
+{
+   let c = a - b
+  print("sub : \(c)")
+}
+sub(a:a, b)
+
+//---mutliplication//
+
+//func mul(a:Int, b:Int) -> Int
+//{
+   //var c = a * b
+   //return c
+//}
+//var c = mul(a:5 , b:2)
+//print("mul :\(c)")
+
+//--- swapping- return multiple value--//
+//func swap(a:Int, b:Int) -> (Int,Int)
+//{
+   //var temp = a
+   // a = b
+ //b = temp
+  // return(b,a)
+//}
+
+//(a,b) = swap(a:10,  b:20)
+//print(a,b)
+//
+//(_,_) = swap(a: 10,b: 20)
+//
+//(_,c) = swap(a: 10,b: 20)
+//print(c)
+
+//--INOUT---//
+func swipe(aa:inout Double,  bb:inout Double)
+{
+   let temp = aa
+    aa = bb
+   bb = temp
+
+}
+var x = 6.7 , y = 4.5
+swipe(aa:&x , bb:&y)
+print(x,y)
+
+//
+var count : [Int] = [1,2,3,4,5]
+func count(numb:Int)
+{
+   print(count)
+}
+
+
+//default parameter
+func simpleInterest(amount: Double, noOfyears : Double, rate :Double = 5.0) -> Double
+{
+   let si = ((amount * rate) * noOfyears) / 100
+   return si
+}
+print(simpleInterest(amount: 1000, noOfyears: 5))
+print(simpleInterest(amount: 1000, noOfyears: 6 , rate :10))
+
+//--Variadic Parameters--//
+func display (n:Int...)
+{
+   for i in n{
+       print(i)
+   }
+}
+display(n: 1,2,3,4,5)
+
+//display  array
+
+//func display1(numberValues:Int, parameters:[Int]...)
+//{
+ //  print("Number of Values (numberValues)")
+   
+   //for i in parameters
+   //{
+     //  print(i)
+   //}
+//}
+//var ar = [1,2,3,4,5,6]
+//display1(numberValues:3 , parameters:ar,ar,ar)
+
+
+// display two array //
+
+func display(arrayList:[Int]...) -> [Int]
+{
+   var array1 = arrayList[0]
+   var array2 = arrayList[1]
+   var result = [Int]()
+   
+   if array1.count == array2.count
+   {
+       for i in 0..<array1.count
+       {
+           result.append(array1[i] + array2[i])
+       }
+   }
+   return result
+}
+var a1 = [1,2,3,4,5]
+var a2 = [10,11,12,13,14]
+var a3 = display(arrayList:a1,a2)
+print(a1)
+print(a2)
+print(a3)
