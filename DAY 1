@@ -1,0 +1,28 @@
+var a = 100
+var b:Int = 200
+
+print("Hello World")
+//println("Welcome to first class")
+
+var x = 10, y = 20
+var z = x + y
+
+print(x,"+",y,"=",z)
+print("\(x)+\(y)=\(z)")
+
+if (x > y)
+{
+   print(x)
+}
+else
+{
+   print(y)
+}
+//var i = 0
+for i in 1..<5
+{
+   print(i)
+}
+
+let n = 50
+//n = 500
